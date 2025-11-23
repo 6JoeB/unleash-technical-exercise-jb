@@ -16,6 +16,8 @@ function useDebounced<T>(value: T, delay = 250) {
   return v;
 }
 
+const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:4000";
+
 const Autocomplete: React.FC = () => {
   const [query, setQuery] = useState("");
   const debounced = useDebounced(query);
@@ -36,7 +38,7 @@ const Autocomplete: React.FC = () => {
       setLoading(true);
       try {
         const query = encodeURIComponent(debounced.trim());
-        const res = await axios.get<address[]>(`http://localhost:4000/search/${query}`);
+        const res = await axios.get<address[]>(`${API_BASE_URL}/search/${query}`);
         setResults(res.data.slice(0, 20));
         setOpen(true);
         setActiveIndex(-1);
