@@ -1,7 +1,19 @@
 import TrieSearch from "trie-search";
 import path from "path";
 import fs from "fs";
-import { Address } from "../types";
+
+interface Address {
+  city: string;
+  county: string;
+  district: string;
+  municipality: string;
+  municipalityNumber: number;
+  postNumber: number;
+  street: string;
+  type: string;
+  typeCode: number;
+}
+
 
 const dataPath = path.join(process.cwd(), "data/addresses.json");
 
