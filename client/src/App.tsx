@@ -1,5 +1,4 @@
-import React from "react";
-import Autocomplete from "./components/Autocomplete";
+import Autocomplete from "./components/Autocomplete/Autocomplete";
 
 function App() {
   return (
