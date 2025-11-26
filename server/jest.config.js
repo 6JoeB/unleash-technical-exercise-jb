@@ -8,6 +8,6 @@ module.exports = {
   transform: {
     ...tsJestTransformCfg
   },
-  testMatch: ["**/tests/**/*.test.ts"],       // only run test files in tests/ folder
-  testPathIgnorePatterns: ["<rootDir>/dist/"] // ignore compiled files
+  testMatch: ["<rootDir>/src/**/*.test.ts", "<rootDir>/tests/**/*.test.ts"],
+  testPathIgnorePatterns: ["<rootDir>/dist/"]
 };
